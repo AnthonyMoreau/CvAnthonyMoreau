@@ -1,0 +1,32 @@
+nav{
+  .nav{
+    font-family: $font-Raleway !important;
+    li{
+      font-size: $smedium-large-font-size;
+      margin: 70% 0;
+      &:last-child{
+        font-size: $medium-font-size;
+        margin-top: 90% !important;
+        margin-bottom: 40% !important;
+      }
+      a{
+        text-decoration: none;
+        color: $light-smoke;
+        &:hover{
+          color: $hover-orange;
+        }
+      }
+    }
+  }
+  .network{
+    font-size: $smedium-large-font-size;
+    a{
+      color: $medium-dark-gray;
+      margin: 0 2%;
+      &:hover{
+        color: $light-smoke;
+        transition: color .3s;
+      }
+    }
+  }
+}

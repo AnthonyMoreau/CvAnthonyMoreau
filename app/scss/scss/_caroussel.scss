@@ -1,0 +1,51 @@
+#experience {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+          "caroussel"
+          "caroussel";
+  .content{
+    grid-area: caroussel;
+    align-self: center;
+    justify-self: stretch;
+
+    .Mon-caroussel{
+
+      .caroussel {
+        position: relative;
+        margin-top: 2em;
+
+        .caroussel__container {
+          transition: transform .3s;
+          transform: translate3d(0, 0, 0);
+        }
+        .caroussel__container::after {
+          content: "" !important;
+          clear: both !important;
+          display: table !important;
+        }
+        .caroussel__item {
+          text-align: center;
+          float: left;
+          z-index: 0;
+        }
+        .item{
+          width: 70%;
+          margin: auto;
+        }
+        .caroussel__next, .caroussel__previous {
+          @include Caroussel_Arrow('../../img/w0209_fleche-z(1).svg');
+        }
+        .caroussel__previous {
+          @include Caroussel_Arrow('../../img/w0209_fleche-z.svg');
+          right: auto;
+          left: 0;
+        }
+        .caroussel_previous--hidden, .caroussel_next--hidden {
+          opacity: 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,264 @@
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans|Open+Sans|Raleway|Roboto|Roboto+Slab|Slabo+27px&display=swap");
+html {
+  scroll-behavior: smooth; }
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 0.1fr;
+  grid-template-areas: "menu about about about about" "menu skills skills skills skills" "menu experience experience experience experience" "menu pong pong pong pong" "menu footer footer footer footer"; }
+
+.menu {
+  grid-area: menu;
+  height: 100vh;
+  background-color: #111111;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  text-align: center;
+  z-index: 1; }
+
+.about {
+  grid-area: about;
+  height: 100vh;
+  background-color: #111111;
+  color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.skills {
+  grid-area: skills;
+  height: 100vh;
+  background-color: #111111;
+  color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.experience {
+  grid-area: experience;
+  height: 100vh;
+  background-color: #111111;
+  color: whitesmoke; }
+
+.pong {
+  grid-area: pong;
+  height: 100vh;
+  background-color: #111111;
+  color: whitesmoke; }
+
+.footer {
+  grid-area: footer;
+  height: 10vh;
+  background-color: #111111;
+  color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .footer .informtions {
+    font-family: "Fira Sans", sans-serif;
+    text-align: center;
+    font-size: 0.9em; }
+    .footer .informtions p {
+      padding: 2px 0; }
+
+body {
+  font-size: 16px;
+  font-family: sans-serif; }
+
+.h1, .h2 {
+  font-family: sans-serif; }
+
+.h1 {
+  font-size: 2.8em; }
+
+.h2 {
+  font-size: 2em; }
+
+.color-gray-light {
+  color: #777777; }
+
+.color-gray {
+  color: #555555; }
+
+.link-menu {
+  opacity: 0.3;
+  transition: opacity 1s linear; }
+
+.active-menu {
+  opacity: 1;
+  transition: background-color .5s, font-family .5s, opacity 0.5s linear; }
+
+.d-none {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.2s, opacity 1s linear; }
+
+.d-block {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s, opacity 0.8s ease-in-out; }
+
+.text-align-center {
+  text-align: center; }
+
+nav .nav {
+  font-family: "Raleway", sans-serif !important; }
+  nav .nav li {
+    font-size: 1.5em;
+    margin: 70% 0; }
+    nav .nav li:last-child {
+      font-size: 1em;
+      margin-top: 90% !important;
+      margin-bottom: 40% !important; }
+    nav .nav li a {
+      text-decoration: none;
+      color: whitesmoke; }
+      nav .nav li a:hover {
+        color: #e59100; }
+nav .network {
+  font-size: 1.5em; }
+  nav .network a {
+    color: #333333;
+    margin: 0 2%; }
+    nav .network a:hover {
+      color: whitesmoke;
+      transition: color .3s; }
+
+#about .content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 2fr 2fr;
+  grid-template-areas: "title title" "title-2 title-2" "img-1 profil-1-text" "img-1 profil-1-text" "profil-2-text img-2" "profil-2-text img-2";
+  width: 70%;
+  padding: 6% 0;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.91);
+  border-radius: 20px; }
+  #about .content .h1 {
+    grid-area: title;
+    padding-bottom: 20px;
+    text-align: center; }
+  #about .content .h2 {
+    grid-area: title-2;
+    padding-bottom: 30px;
+    text-align: center; }
+  #about .content .img-1 {
+    grid-area: img-1;
+    justify-self: center;
+    align-self: center; }
+    #about .content .img-1 img {
+      border-radius: 8px; }
+  #about .content .img-2 {
+    grid-area: img-2;
+    justify-self: center;
+    align-self: center; }
+    #about .content .img-2 img {
+      border-radius: 8px; }
+  #about .content .profil-1-text {
+    grid-area: profil-1-text;
+    justify-self: center;
+    align-self: center;
+    line-height: 1.2em; }
+  #about .content .profil-2-text {
+    grid-area: profil-2-text;
+    justify-self: center;
+    align-self: center; }
+
+#skills .content {
+  width: 80%;
+  margin-top: 5%; }
+  #skills .content .My-skills {
+    text-align: center; }
+    #skills .content .My-skills .skills_ {
+      height: 30px;
+      width: 100%;
+      background-color: whitesmoke;
+      margin: 20px auto; }
+    #skills .content .My-skills .skill_ {
+      height: 30px;
+      background-color: rgba(45, 45, 45, 0.9);
+      width: 10%; }
+    #skills .content .My-skills .load {
+      display: flex;
+      margin: 20px 0;
+      width: 100%;
+      justify-content: center; }
+    #skills .content .My-skills .load span {
+      color: #8c8c8c;
+      margin: auto; }
+  #skills .content .chargement {
+    text-align: center;
+    padding: 15px 20px;
+    background-color: #555555;
+    border-radius: 8px;
+    cursor: pointer; }
+    #skills .content .chargement:hover {
+      background-color: #333333;
+      transition: background-color .3s; }
+    #skills .content .chargement p {
+      font-size: 2em;
+      font-family: "Roboto Slab", serif; }
+
+#experience {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "caroussel" "caroussel"; }
+  #experience .content {
+    grid-area: caroussel;
+    align-self: center;
+    justify-self: stretch; }
+    #experience .content .Mon-caroussel .caroussel {
+      position: relative;
+      margin-top: 2em; }
+      #experience .content .Mon-caroussel .caroussel .caroussel__container {
+        transition: transform .3s;
+        transform: translate3d(0, 0, 0); }
+      #experience .content .Mon-caroussel .caroussel .caroussel__container::after {
+        content: "" !important;
+        clear: both !important;
+        display: table !important; }
+      #experience .content .Mon-caroussel .caroussel .caroussel__item {
+        text-align: center;
+        float: left;
+        z-index: 0; }
+      #experience .content .Mon-caroussel .caroussel .item {
+        width: 70%;
+        margin: auto; }
+      #experience .content .Mon-caroussel .caroussel .caroussel__next, #experience .content .Mon-caroussel .caroussel .caroussel__previous {
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        background: #999999 url("../../img/w0209_fleche-z(1).svg") center center no-repeat;
+        background-size: 7.5px 7.5px;
+        border-radius: 50%;
+        top: 50%;
+        margin: -7.5px 40px 0 40px;
+        right: 0;
+        cursor: pointer;
+        transition: transform .3s, opacity .3s; }
+        #experience .content .Mon-caroussel .caroussel .caroussel__next:hover, #experience .content .Mon-caroussel .caroussel .caroussel__previous:hover {
+          transform: scale(2); }
+      #experience .content .Mon-caroussel .caroussel .caroussel__previous {
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        background: #999999 url("../../img/w0209_fleche-z.svg") center center no-repeat;
+        background-size: 7.5px 7.5px;
+        border-radius: 50%;
+        top: 50%;
+        margin: -7.5px 40px 0 40px;
+        right: 0;
+        cursor: pointer;
+        transition: transform .3s, opacity .3s;
+        right: auto;
+        left: 0; }
+        #experience .content .Mon-caroussel .caroussel .caroussel__previous:hover {
+          transform: scale(2); }
+      #experience .content .Mon-caroussel .caroussel .caroussel_previous--hidden, #experience .content .Mon-caroussel .caroussel .caroussel_next--hidden {
+        opacity: 0; }
+
+/*# sourceMappingURL=style.css.map */

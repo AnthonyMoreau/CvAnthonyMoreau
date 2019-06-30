@@ -1,0 +1,75 @@
+html{
+  scroll-behavior: smooth;
+}
+
+.container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
+  grid-template-rows: 1fr 1fr 1fr 1fr 0.1fr ;
+  grid-template-areas:
+  "menu about about about about"
+  "menu skills skills skills skills"
+  "menu experience experience experience experience"
+  "menu pong pong pong pong"
+  "menu footer footer footer footer";
+}
+.menu{
+  grid-area: menu;
+  height: 100vh;
+  background-color: $dark-gray;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  text-align: center;
+  z-index: 1;
+}
+.about{
+  grid-area: about;
+  height: 100vh;
+  background-color: $dark-gray;
+  color: $light-smoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.skills{
+  grid-area: skills;
+  height: 100vh;
+  background-color: $dark-gray;
+  color: $light-smoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.experience{
+  grid-area: experience;
+  height: 100vh;
+  background-color: $dark-gray;
+  color: $light-smoke;
+}
+.pong{
+  grid-area: pong;
+  height: 100vh;
+  background-color: $dark-gray;
+  color: $light-smoke;
+}
+.footer{
+  grid-area: footer;
+  height: 10vh;
+  background-color: $dark-gray;
+  color: $light-smoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .informtions{
+    font-family: $font-Fira-Sans;
+    $medium-font-size: 0.9em;
+    text-align: center;
+    font-size: $medium-font-size;
+    p{
+      padding: 2px 0;
+    }
+  }
+}

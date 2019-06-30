@@ -1,0 +1,46 @@
+#skills{
+  .content{
+    width: 80%;
+    margin-top: 5%;
+    .My-skills{
+      text-align: center;
+      .skills_{
+        height: 30px;
+        width: 100%;
+        background-color: whitesmoke;
+        margin: 20px auto;
+      }
+      .skill_{
+        height: 30px;
+        background-color: rgba(45, 45, 45, 0.9);
+        width: 10%;
+      }
+      .load {
+        display: flex;
+        margin: 20px 0;
+        width: 100%;
+        justify-content: center;
+      }
+      .load span {
+        color: #8c8c8c;
+        margin: auto;
+      }
+    }
+    .chargement{
+      text-align: center;
+      padding: 15px 20px;
+      background-color: $medium-gray;
+      border-radius: 8px;
+      cursor: pointer;
+      &:hover{
+        background-color: $medium-dark-gray;
+        transition: background-color .3s;
+      }
+      p{
+        font-size: $large-font-size;
+        font-family: $font-Roboto-Slab;
+      }
+    }
+
+  }
+}

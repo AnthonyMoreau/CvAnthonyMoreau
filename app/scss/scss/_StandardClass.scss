@@ -1,0 +1,40 @@
+body{
+  font-size: $base-font-size;
+  font-family: $sans-serif;
+}
+.h1, .h2{
+  font-family: $sans-serif;
+}
+.h1{
+  font-size: $extra-large-font-size;
+}
+.h2{
+  font-size: $large-font-size;
+}
+.color-gray-light{
+  color: $light-medium-gray;
+}
+.color-gray{
+  color: $medium-gray;
+}
+.link-menu{
+  opacity: 0.3;
+  transition: opacity 1s linear;
+}
+.active-menu{
+  opacity: 1;
+  transition: background-color .5s, font-family .5s, opacity 0.5s linear;
+}
+.d-none{
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.2s, opacity 1s linear;
+}
+.d-block{
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s, opacity 0.8s ease-in-out;
+}
+.text-align-center{
+  text-align: center;
+}
