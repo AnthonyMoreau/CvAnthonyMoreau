@@ -1,4 +1,4 @@
-@mixin Caroussel_Arrow ($url, $color: $light-gray) {
+@mixin Caroussel_Arrow ($url: "", $color: $light-gray) {
   position: absolute;
   width: 15px;
   height: 15px;
@@ -6,12 +6,18 @@
   background-size: 7.5px 7.5px;
   border-radius:  50%;
   top: 50%;
-  margin: -7.5px 40px 0 40px;
+  margin: -7.5px 20% 0 20%;
   right: 0;
   cursor: pointer;
   transition: transform .3s, opacity .3s;
+  
   &:hover {
-    transform: scale(2);
+    transform: scale(1.6);
   }
 
+}
+
+@mixin B-G-C($color, $opacity: 1){
+  background-color: $color;
+  opacity: $opacity;
 }

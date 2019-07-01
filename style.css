@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Fira+Sans|Open+Sans|Raleway|Roboto|Roboto+Slab|Slabo+27px&display=swap");
 html {
   scroll-behavior: smooth; }
+  html body {
+    overflow-x: hidden; }
 
 .container {
   display: grid;
@@ -93,6 +95,7 @@ body {
   transition: background-color .5s, font-family .5s, opacity 0.5s linear; }
 
 .d-none {
+  height: 0;
   visibility: hidden;
   opacity: 0;
   transition: visibility 0.2s, opacity 1s linear; }
@@ -104,6 +107,14 @@ body {
 
 .text-align-center {
   text-align: center; }
+
+.title, .PONG h2 {
+  margin: 0 !important;
+  padding: 15px 0;
+  font-family: "Open Sans", sans-serif;
+  font-size: 3em;
+  text-align: center;
+  color: whitesmoke; }
 
 nav .nav {
   font-family: "Raleway", sans-serif !important; }
@@ -191,13 +202,13 @@ nav .network {
       margin: auto; }
   #skills .content .chargement {
     text-align: center;
-    padding: 15px 20px;
+    padding: 15px 0;
     background-color: #555555;
     border-radius: 8px;
-    cursor: pointer; }
+    cursor: pointer;
+    transition: background-color .2s linear; }
     #skills .content .chargement:hover {
-      background-color: #333333;
-      transition: background-color .3s; }
+      background-color: #333333; }
     #skills .content .chargement p {
       font-size: 2em;
       font-family: "Roboto Slab", serif; }
@@ -232,33 +243,76 @@ nav .network {
         position: absolute;
         width: 15px;
         height: 15px;
-        background: #999999 url("../../img/w0209_fleche-z(1).svg") center center no-repeat;
+        background: #999999 url("") center center no-repeat;
         background-size: 7.5px 7.5px;
         border-radius: 50%;
         top: 50%;
-        margin: -7.5px 40px 0 40px;
+        margin: -7.5px 20% 0 20%;
         right: 0;
         cursor: pointer;
         transition: transform .3s, opacity .3s; }
         #experience .content .Mon-caroussel .caroussel .caroussel__next:hover, #experience .content .Mon-caroussel .caroussel .caroussel__previous:hover {
-          transform: scale(2); }
+          transform: scale(1.6); }
       #experience .content .Mon-caroussel .caroussel .caroussel__previous {
         position: absolute;
         width: 15px;
         height: 15px;
-        background: #999999 url("../../img/w0209_fleche-z.svg") center center no-repeat;
+        background: #999999 url("") center center no-repeat;
         background-size: 7.5px 7.5px;
         border-radius: 50%;
         top: 50%;
-        margin: -7.5px 40px 0 40px;
+        margin: -7.5px 20% 0 20%;
         right: 0;
         cursor: pointer;
         transition: transform .3s, opacity .3s;
         right: auto;
         left: 0; }
         #experience .content .Mon-caroussel .caroussel .caroussel__previous:hover {
-          transform: scale(2); }
+          transform: scale(1.6); }
       #experience .content .Mon-caroussel .caroussel .caroussel_previous--hidden, #experience .content .Mon-caroussel .caroussel .caroussel_next--hidden {
         opacity: 0; }
+      #experience .content .Mon-caroussel .caroussel .item__title {
+        font-size: 1.5em; }
+        #experience .content .Mon-caroussel .caroussel .item__title h3 {
+          font-size: 2em;
+          padding: 10px 0; }
+      #experience .content .Mon-caroussel .caroussel .item-description {
+        padding: 20px 0;
+        width: 50%;
+        margin: auto;
+        line-height: 1.2em;
+        text-align: justify; }
+
+.PONG {
+  background-color: #111111;
+  opacity: 1;
+  position: relative; }
+  .PONG h2 {
+    font-size: 2.2em; }
+    .PONG h2:hover {
+      color: #e59100;
+      cursor: pointer; }
+  .PONG .raquette {
+    background-color: #555555;
+    position: absolute;
+    top: 80%;
+    height: 1.5%;
+    width: 30%; }
+  .PONG .balle {
+    position: absolute;
+    height: 2vh;
+    width: 2vh;
+    background-color: #999999;
+    border-radius: 50%; }
+  .PONG .play {
+    color: whitesmoke;
+    text-align: center; }
+    .PONG .play p {
+      font-family: "Roboto", sans-serif; }
+  .PONG .fin {
+    position: absolute;
+    top: 92%;
+    width: 50%;
+    left: 25%; }
 
 /*# sourceMappingURL=style.css.map */

@@ -42,11 +42,9 @@ class randomSkillsLoading{
             if(transition != null){
                 s.style.transition = "width "+ transition +"s linear"
             }
-
-
         }, 1000/this.divisionSecond);
-
     }
+
     createDivWithClass(maClass){
         let p = document.createElement('div');
         p.setAttribute('class', maClass);
@@ -61,9 +59,9 @@ class Caroussel {
     /**
      * @param {HTMLElement} element
      * @param options
-     * @param {Object} option.slidesToScroll
-     * @param {Object} option.slidesVisible
-     * @param {boolean} option.loop
+     * @param {Object} options.slidesToScroll
+     * @param {Object} options.slidesVisible
+     * @param {boolean} options.loop
      */
     constructor (element, options = {}){
         this.element = element;

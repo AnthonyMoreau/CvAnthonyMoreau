@@ -28,13 +28,13 @@
     }
     .chargement{
       text-align: center;
-      padding: 15px 20px;
+      padding: 15px 0;
       background-color: $medium-gray;
       border-radius: 8px;
       cursor: pointer;
+      transition: background-color .2s linear;
       &:hover{
         background-color: $medium-dark-gray;
-        transition: background-color .3s;
       }
       p{
         font-size: $large-font-size;

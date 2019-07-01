@@ -26,6 +26,7 @@ body{
   transition: background-color .5s, font-family .5s, opacity 0.5s linear;
 }
 .d-none{
+  height: 0;
   visibility: hidden;
   opacity: 0;
   transition: visibility 0.2s, opacity 1s linear;
@@ -37,4 +38,12 @@ body{
 }
 .text-align-center{
   text-align: center;
+}
+.title {
+  margin: 0 !important;
+  padding: 15px 0;
+  font-family: $font-Open-Sans;
+  font-size: 3em;
+  text-align: center;
+  color: $light-smoke,
 }

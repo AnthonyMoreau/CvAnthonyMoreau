@@ -1,0 +1,40 @@
+.PONG {
+    @include B-G-C($dark-gray);
+    position: relative;
+    h2 {
+        @extend .title;
+        font-size: 2.2em;
+        &:hover {
+            color: $hover-orange;
+            cursor: pointer;
+        }
+    }
+    .raquette {
+        background-color: $medium-gray;
+        position: absolute;
+        top: 80%;
+        height: 1.5%;
+        width: 30%;
+    }
+    .balle {
+        position: absolute;
+        height: 2vh;
+        width: 2vh;
+        background-color: $light-gray;
+        border-radius: 50%;
+    }
+    .play {
+        color: $light-smoke;
+        text-align: center;
+        p {
+            font-family: $font-Roboto;
+        }
+    }
+    .fin {
+        position: absolute;
+        top: 92%;
+        width: 50%;
+        left: 25%;
+
+    }
+}

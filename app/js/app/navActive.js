@@ -32,7 +32,7 @@ document.addEventListener('scroll', (e) => {
                 li[i].classList.add("active-menu");
             }
         }
-        if (e.pageY >= scrollMax - (information / 2)){
+        if (e.pageY >= scrollMax - (information / 3)){
             for (let j = 0; j < li.length ; j++) {
                 li[j].classList.remove("active-menu")
             }

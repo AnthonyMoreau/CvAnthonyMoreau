@@ -35,15 +35,29 @@
           margin: auto;
         }
         .caroussel__next, .caroussel__previous {
-          @include Caroussel_Arrow('../../img/w0209_fleche-z(1).svg');
+          @include Caroussel_Arrow();
         }
         .caroussel__previous {
-          @include Caroussel_Arrow('../../img/w0209_fleche-z.svg');
+          @include Caroussel_Arrow();
           right: auto;
           left: 0;
         }
         .caroussel_previous--hidden, .caroussel_next--hidden {
           opacity: 0;
+        }
+        .item__title{
+          font-size: $smedium-large-font-size;
+          h3{
+            font-size: $large-font-size;
+            padding: 10px 0;
+          }
+        }
+        .item-description{
+          padding: 20px 0;
+          width: 50%;
+          margin: auto;
+          line-height: 1.2em;
+          text-align: justify;
         }
       }
     }
