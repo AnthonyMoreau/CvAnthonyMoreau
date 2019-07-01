@@ -2,7 +2,8 @@
 html {
   scroll-behavior: smooth; }
   html body {
-    overflow-x: hidden; }
+    overflow-x: hidden;
+    scroll-behavior: opacity(0); }
 
 .container {
   display: grid;
@@ -301,8 +302,7 @@ nav .network {
     background-color: #555555;
     position: absolute;
     top: 80%;
-    height: 1.5%;
-    width: 30%; }
+    height: 1.5%; }
   .PONG .balle {
     position: absolute;
     height: 2vh;
@@ -319,5 +319,15 @@ nav .network {
     top: 92%;
     width: 50%;
     left: 25%; }
+
+@media only screen and (min-width: 1600px) {
+  .raquette {
+    width: 10%; } }
+@media only screen and (max-width: 700px) {
+  .raquette {
+    width: 23%; } }
+@media only screen and (min-width: 700px) and (max-width: 1600px) {
+  .raquette {
+    width: 12%; } }
 
 /*# sourceMappingURL=style.css.map */

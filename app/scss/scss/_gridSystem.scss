@@ -2,9 +2,9 @@ html{
   scroll-behavior: smooth;
   body{
     overflow-x: hidden;
+    scroll-behavior: opacity($zero);
   }
 }
-
 .container{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
@@ -66,13 +66,13 @@ html{
   display: flex;
   justify-content: center;
   align-items: center;
-  .informtions{
-    font-family: $font-Fira-Sans;
-    $medium-font-size: 0.9em;
-    text-align: center;
-    font-size: $medium-font-size;
-    p{
-      padding: 2px 0;
-    }
+    .informtions{
+      font-family: $font-Fira-Sans;
+      $medium-font-size: 0.9em;
+      text-align: center;
+      font-size: $medium-font-size;
+      p{
+        padding: 2px 0;
+      }
   }
 }

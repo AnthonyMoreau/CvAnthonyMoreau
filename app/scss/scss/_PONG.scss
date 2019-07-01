@@ -14,7 +14,6 @@
         position: absolute;
         top: 80%;
         height: 1.5%;
-        width: 30%;
     }
     .balle {
         position: absolute;
@@ -36,5 +35,21 @@
         width: 50%;
         left: 25%;
 
+    }
+}
+
+@media only screen and (min-width: 1600px){
+    .raquette{
+        width: 10%;
+    }
+}
+@media only screen and (max-width: 700px){
+    .raquette{
+        width: 23%;
+    }
+}
+@media only screen and(min-width: 700px) and (max-width: 1600px){
+    .raquette{
+        width: 12%;
     }
 }

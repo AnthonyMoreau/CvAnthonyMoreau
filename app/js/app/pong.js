@@ -2,7 +2,14 @@
 function getRandom(mn, mx) {
     return (Math.random() * (mx - mn)) - mx
 }
+function fractionNumber(number, divise, diviseur){
+    let a = number / diviseur;
+    return a * divise
+
+}
+let navWidth = pourcentage(window.innerHeight, 20);
 let pong = document.querySelector('.PONG h2');
+let limiteHeightBonnus = document.querySelector('.pong').offsetTop;
 
 pong.addEventListener('click', function(){
     pong = document.querySelector('.PONG h2');
@@ -35,7 +42,24 @@ let positionBalleX = balle.offsetLeft;
 let postionRaquetteY = pourcentage(window.innerHeight, 80) - pourcentage(window.innerHeight, 8);
 let postionRaquetteX = raquette.offsetLeft;
 let positionTopAdjust = pourcentage(window.innerHeight, 8);
-let largeurRaquette = pourcentage(window.innerWidth, 30);
+let largeurRaquette = undefined;
+
+if(window.innerWidth > 1600){
+
+    largeurRaquette = pourcentage(window.innerWidth, 10);
+    raquette.style.left = 45 + '%';
+
+} else if(window.innerWidth > 700 && window.innerWidth < 1600) {
+
+    largeurRaquette = pourcentage(window.innerWidth, 12);
+    raquette.style.left = 44 + '%';
+
+} else {
+
+    largeurRaquette = pourcentage(window.innerWidth, 23);
+    raquette.style.left = 33.5 + '%';
+
+}
 
 let PointScore = document.getElementsByClassName('score')[0];
 let NbChance = 3;
@@ -44,6 +68,10 @@ let Score = 0;
 let limiteHeight = 0;
 
 fenetre.addEventListener('click', () => {
+
+    let body = document.querySelector('body');
+    body.style.overflowY = 'hidden';
+    console.log(body);
 
     postionRaquetteY = pourcentage(window.innerHeight, 80) - pourcentage(window.innerHeight, 8);
     
@@ -54,8 +82,8 @@ fenetre.addEventListener('click', () => {
 
     setInterval(function(){
 
-        if(Score >=2){
-            limiteHeight = -500
+        if(Score >=10){
+            limiteHeight = -(limiteHeightBonnus)
         }
 
 
@@ -71,20 +99,18 @@ fenetre.addEventListener('click', () => {
                 if(vitesseY > 0) {
                     vitesseY += 0.5;
                     vitesseY = (vitesseY * (-1));
-                    if(largeurRaquette < 80) {
-                        largeurRaquette = 80
+                    if(largeurRaquette < 10) {
+                        largeurRaquette = 10
                     } else {
                         largeurRaquette += -5
                     }
                     raquette.style.width = largeurRaquette + "px";
-                    console.log(largeurRaquette)
                 }
                 else {
                     vitesseY -= 0.5;
                     vitesseY = (vitesseY * (-1))
                 }
                 vitesseX = getRandom(-5, 5);
-                console.log(vitesseY)
             } else {
                 vitesseY = 10;
                 vitesseY = (vitesseY * (-1))
@@ -97,11 +123,16 @@ fenetre.addEventListener('click', () => {
         }
 
         // La BALLE TAPE LES BORDS => LA VITESSE-X S'INVERSE
-        if(positionBalleX <= 0 || positionBalleX >= window.innerWidth){
+        if(positionBalleX <= 0 || positionBalleX >= fractionNumber(window.innerWidth, 4, 5)){
             vitesseX = (vitesseX * (-1))
         }
         // LA BALLE TOMBE => ON PERD UN COUP
         if(limitePositionBalleY > postionRaquetteY + 30) {
+            if(NbChance <= 0 ){
+                NbChance = 3;
+                alert('vous avez perdu !')
+                
+            }
             limitePositionBalleY = pourcentage(window.innerHeight, 30) ;
             balleX = pourcentage(window.innerWidth, 50);
             balle.style.top = limitePositionBalleY + "px";
@@ -117,14 +148,14 @@ fenetre.addEventListener('click', () => {
     }, 1000/40);
     
     mousePosition = fenetre.addEventListener('mousemove', function(e){
-        
-        if(e.clientX <= (largeurRaquette / 2)) {
+
+        if(e.clientX + fractionNumber(window.innerWidth, 1, 5) <= (largeurRaquette / 2)) {
             raquette.style.left = 0;
         }
-        else if(e.clientX >= (window.innerWidth - largeurRaquette / 2)) {
-            raquette.style.left = (window.innerWidth - largeurRaquette / 2) + "px";
+        else if(e.clientX - e.clientX - fractionNumber(window.innerWidth, 1, 5) >= (fractionNumber(window.innerWidth, 4, 5) - largeurRaquette / 2)) {
+            raquette.style.left = (fractionNumber(window.innerWidth, 4, 5) - largeurRaquette) + "px";
         } else {
-            raquette.style.left = (e.clientX - largeurRaquette / 2) + "px";
+            raquette.style.left = ((e.clientX - fractionNumber(window.innerWidth, 1, 5)) - largeurRaquette / 2) + "px";
         }
         
     })

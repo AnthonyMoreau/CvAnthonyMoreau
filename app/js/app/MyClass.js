@@ -1,4 +1,4 @@
-class randomSkillsLoading{
+class randomSkillsLoading {
 
     constructor(container,language, min, max, divisionSecond, pourcentage, random, transition){
 
@@ -54,7 +54,6 @@ class randomSkillsLoading{
         return document.querySelector(maClass);
     }
 }
-
 class Caroussel {
     /**
      * @param {HTMLElement} element
