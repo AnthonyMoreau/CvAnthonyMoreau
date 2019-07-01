@@ -30,10 +30,6 @@ let vitesseX = getRandom(-5, 5);
 
 let limitePositionBalleY = pourcentage(window.innerHeight, 30);
 
-let bodyHeight = document.querySelector('body');
-
-console.log(bodyHeight);
-
 let positionBalleY = balle.offsetTop;
 let positionBalleX = balle.offsetLeft;
 let postionRaquetteY = pourcentage(window.innerHeight, 80) - pourcentage(window.innerHeight, 8);
@@ -47,14 +43,14 @@ let Score = 0;
 
 let limiteHeight = 0;
 
-let o = fenetre.addEventListener('click', () => {
+fenetre.addEventListener('click', () => {
 
-    postionRaquetteY = pourcentage(window.innerHeight, 80) - pourcentage(window.innerHeight, 8)
+    postionRaquetteY = pourcentage(window.innerHeight, 80) - pourcentage(window.innerHeight, 8);
     
     document.querySelector('.PONG .play p').textContent = 'Le jeu commmence';
     setTimeout(function(){
         document.querySelector('.PONG .play p').textContent = '';
-    }, 1500)
+    }, 1500);
 
     setInterval(function(){
 
@@ -73,10 +69,10 @@ let o = fenetre.addEventListener('click', () => {
         if((limitePositionBalleY <= limiteHeight + positionTopAdjust) || (limitePositionBalleY >= (postionRaquetteY) && positionBalleX > postionRaquetteX && positionBalleX < (postionRaquetteX + largeurRaquette))) {
             if(vitesseY < 10) {
                 if(vitesseY > 0) {
-                    vitesseY += 0.5
+                    vitesseY += 0.5;
                     vitesseY = (vitesseY * (-1));
                     if(largeurRaquette < 80) {
-                        largeurRaquette = largeurRaquette
+                        largeurRaquette = 80
                     } else {
                         largeurRaquette += -5
                     }
