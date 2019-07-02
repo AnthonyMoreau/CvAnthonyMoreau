@@ -2,11 +2,12 @@
 function getRandom(mn, mx) {
     return (Math.random() * (mx - mn)) - mx
 }
-function fractionNumber(number, divise, diviseur){
-    let a = number / diviseur;
-    return a * divise
+function fractionNumber(number, diviser, diviseur){
+    let result = number / diviseur;
+    return result * diviser
 
 }
+
 let navWidth = pourcentage(window.innerHeight, 20);
 let pong = document.querySelector('.PONG h2');
 let limiteHeightBonnus = document.querySelector('.pong').offsetTop;
@@ -43,7 +44,7 @@ let postionRaquetteY = pourcentage(window.innerHeight, 80) - pourcentage(window.
 let postionRaquetteX = raquette.offsetLeft;
 let positionTopAdjust = pourcentage(window.innerHeight, 8);
 let largeurRaquette = undefined;
-
+//TAILLE RAQUETTE RESPONSIVE
 if(window.innerWidth > 1600){
 
     largeurRaquette = pourcentage(window.innerWidth, 10);
@@ -62,8 +63,9 @@ if(window.innerWidth > 1600){
 }
 
 let PointScore = document.getElementsByClassName('score')[0];
-let NbChance = 3;
 let Score = 0;
+let NbChance = 3;
+let PointChance = document.getElementsByClassName('chance')[0];;
 
 let limiteHeight = 0;
 
@@ -91,6 +93,7 @@ fenetre.addEventListener('click', () => {
         positionBalleY = balle.offsetTop;
         positionBalleX = balle.offsetLeft;
         postionRaquetteX = raquette.offsetLeft;
+        PointChance.innerHTML = "vies : " + NbChance;
         
 
         // La BALLE TAPE LA RAQUETTE OU LE TOP => LA VITESSE-Y S'INVERSE et la VITESSE-X se regenère
@@ -119,7 +122,8 @@ fenetre.addEventListener('click', () => {
 
         if((limitePositionBalleY >= (postionRaquetteY) && positionBalleX > postionRaquetteX && positionBalleX < (postionRaquetteX + largeurRaquette))){
             Score++;
-            PointScore.innerText = "Score : " + Score
+            PointScore.innerText = "Score : " + Score;
+
         }
 
         // La BALLE TAPE LES BORDS => LA VITESSE-X S'INVERSE
@@ -130,15 +134,19 @@ fenetre.addEventListener('click', () => {
         if(limitePositionBalleY > postionRaquetteY + 30) {
             if(NbChance <= 0 ){
                 NbChance = 3;
-                alert('vous avez perdu !')
+                Score = 0;
+                PointScore.innerText = "Score : " + Score;
+                PointChance.innerHTML = "vie : " + NbChance;
+                vitesseY  = 3;
+
+                alert('vous avez perdu !');
                 
             }
             limitePositionBalleY = pourcentage(window.innerHeight, 30) ;
             balleX = pourcentage(window.innerWidth, 50);
             balle.style.top = limitePositionBalleY + "px";
             balle.style.left = balleX + "px";
-            vitesseY  = 2;
-            NbChance--
+            NbChance--;
         }
         limitePositionBalleY += vitesseY;
         balleX += vitesseX;
