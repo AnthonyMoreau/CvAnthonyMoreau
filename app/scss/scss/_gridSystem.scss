@@ -1,9 +1,9 @@
 html{
   scroll-behavior: smooth;
-  body{
-    overflow-x: hidden;
-    scroll-behavior: opacity($zero);
-  }
+}
+body{
+  overflow-x: hidden;
+  font-size: $base-font-size;
 }
 .container{
   display: grid;
@@ -75,4 +75,33 @@ html{
         padding: 2px 0;
       }
   }
+}
+
+@media only screen and (max-width: 540px){
+
+  $base-font-size: 10px;
+
+  body{
+    font-size: $base-font-size !important;
+  }
+  .container{
+
+    grid-template-columns: 1fr;
+    grid-auto-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    "about"
+    "skills"
+    "experience"
+    "pong"
+    "footer";
+  }
+  .menu{
+
+    display: none;
+
+  }
+  .about, .experience{
+    height: auto;
+  }
+    
 }

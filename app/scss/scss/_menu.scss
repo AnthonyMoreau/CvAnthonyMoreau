@@ -30,3 +30,16 @@ nav{
     }
   }
 }
+
+@media only screen and (max-height: 780px) {
+  nav{
+    .nav{
+      li{
+        margin: 50% 0;
+        &:last-child {
+          margin-top: 50% !important;
+        }
+      }
+    }
+  }
+}

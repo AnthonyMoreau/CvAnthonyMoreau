@@ -30,4 +30,8 @@ $dark-gray: rgb(17, 17, 17);
 $hover-orange: #e59100;
 
 
-$zero: 0
+$zero: 0;
+
+@media only screen and (max-width: 540px){
+    $base-font-size: 10px;
+}

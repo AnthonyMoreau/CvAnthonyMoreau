@@ -68,7 +68,7 @@ loadSkillsButton.addEventListener("click", () => {
         4,
         30 / vitesse,
         30,
-        'true',
+        'false',
         transition);
 });
 
