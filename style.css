@@ -253,6 +253,7 @@ nav .network a:hover {
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas: "title" "title-2" "img-1" "profil-1-text" "img-2" "profil-2-text";
     width: 100%;
+    height: 100vh;
   }
 }
 @media only screen and (max-height: 780px) {
