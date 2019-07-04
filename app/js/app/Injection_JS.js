@@ -9,14 +9,14 @@ let Weight = undefined;
 if(window.innerWidth > 1600){
     
     Font_body = 16 + 'px';
-    color = 'red';
+    color = 'rgb(255, 70, 32)';
     Weight = 'bold';
     FontWeight = "font-weight";
 
 } else {
 
     Font_body = 12 + 'px';
-    color = 'blue';
+    color = 'rgb(255, 70, 32)';
     weight = 12 + 'px'
     FontWeight = 'font-size'
 }

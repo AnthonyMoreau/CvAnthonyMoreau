@@ -11,6 +11,7 @@ function fractionNumber(number, diviser, diviseur){
 let navWidth = pourcentage(window.innerHeight, 20);
 let pong = document.querySelector('.PONG h2');
 let limiteHeightBonnus = document.querySelector('.pong').offsetTop;
+let screen = fractionNumber(window.innerWidth, 1, 5);
 
 pong.addEventListener('click', function(){
     pong = document.querySelector('.PONG h2');
@@ -40,7 +41,7 @@ let limitePositionBalleY = pourcentage(window.innerHeight, 30);
 
 let positionBalleY = balle.offsetTop;
 let positionBalleX = balle.offsetLeft;
-let postionRaquetteY = pourcentage(window.innerHeight, 80) - pourcentage(window.innerHeight, 8);
+let postionRaquetteY = pourcentage(window.innerHeight, 80) - pourcentage(window.innerHeight, 1.5);
 let postionRaquetteX = raquette.offsetLeft;
 let positionTopAdjust = pourcentage(window.innerHeight, 8);
 let largeurRaquette = undefined;
@@ -73,9 +74,8 @@ fenetre.addEventListener('click', () => {
 
     let body = document.querySelector('body');
     body.style.overflowY = 'hidden';
-    console.log(body);
 
-    postionRaquetteY = pourcentage(window.innerHeight, 80) - pourcentage(window.innerHeight, 8);
+    postionRaquetteY = pourcentage(window.innerHeight, 80) - pourcentage(window.innerHeight, 1.5);
     
     document.querySelector('.PONG .play p').textContent = 'Le jeu commmence';
     setTimeout(function(){
@@ -94,18 +94,19 @@ fenetre.addEventListener('click', () => {
         positionBalleX = balle.offsetLeft;
         postionRaquetteX = raquette.offsetLeft;
         PointChance.innerHTML = "vies : " + NbChance;
+        raquette.style.width = largeurRaquette + "px";
         
 
         // La BALLE TAPE LA RAQUETTE OU LE TOP => LA VITESSE-Y S'INVERSE et la VITESSE-X se regenère
-        if((limitePositionBalleY <= limiteHeight + positionTopAdjust) || (limitePositionBalleY >= (postionRaquetteY) && positionBalleX > postionRaquetteX && positionBalleX < (postionRaquetteX + largeurRaquette))) {
+        if((limitePositionBalleY <= limiteHeight) || (limitePositionBalleY >= (postionRaquetteY) && positionBalleX > postionRaquetteX && positionBalleX < (postionRaquetteX + largeurRaquette))) {
             if(vitesseY < 10) {
                 if(vitesseY > 0) {
                     vitesseY += 0.5;
                     vitesseY = (vitesseY * (-1));
-                    if(largeurRaquette < 10) {
-                        largeurRaquette = 10
+                    if(largeurRaquette <= 5) {
+                        largeurRaquette = 5
                     } else {
-                        largeurRaquette += -5
+                        largeurRaquette -= 5
                     }
                     raquette.style.width = largeurRaquette + "px";
                 }
@@ -123,7 +124,6 @@ fenetre.addEventListener('click', () => {
         if((limitePositionBalleY >= (postionRaquetteY) && positionBalleX > postionRaquetteX && positionBalleX < (postionRaquetteX + largeurRaquette))){
             Score++;
             PointScore.innerText = "Score : " + Score;
-
         }
 
         // La BALLE TAPE LES BORDS => LA VITESSE-X S'INVERSE
@@ -131,8 +131,8 @@ fenetre.addEventListener('click', () => {
             vitesseX = (vitesseX * (-1))
         }
         // LA BALLE TOMBE => ON PERD UN COUP
-        if(limitePositionBalleY > postionRaquetteY + 30) {
-            if(NbChance <= 0 ){
+        if(limitePositionBalleY > postionRaquetteY + 50) {
+            if(NbChance <= 1 ){
                 NbChance = 3;
                 Score = 0;
                 PointScore.innerText = "Score : " + Score;
@@ -142,11 +142,11 @@ fenetre.addEventListener('click', () => {
                 alert('vous avez perdu !');
                 
             }
+            NbChance--;
             limitePositionBalleY = pourcentage(window.innerHeight, 30) ;
             balleX = pourcentage(window.innerWidth, 50);
             balle.style.top = limitePositionBalleY + "px";
-            balle.style.left = balleX + "px";
-            NbChance--;
+            balle.style.left = balleX + "%";
         }
         limitePositionBalleY += vitesseY;
         balleX += vitesseX;
@@ -156,11 +156,13 @@ fenetre.addEventListener('click', () => {
     }, 1000/40);
     
     mousePosition = fenetre.addEventListener('mousemove', function(e){
-
-        if(e.clientX + fractionNumber(window.innerWidth, 1, 5) <= (largeurRaquette / 2)) {
+        let screen = fractionNumber(window.innerWidth, 1, 5);
+        console.log(screen)
+        console.log(e.clientX)
+        if(e.clientX  <= screen + (largeurRaquette / 2)) {
             raquette.style.left = 0;
         }
-        else if(e.clientX - e.clientX - fractionNumber(window.innerWidth, 1, 5) >= (fractionNumber(window.innerWidth, 4, 5) - largeurRaquette / 2)) {
+        else if(e.clientX - screen >= (fractionNumber(window.innerWidth, 4, 5) - largeurRaquette / 2)) {
             raquette.style.left = (fractionNumber(window.innerWidth, 4, 5) - largeurRaquette) + "px";
         } else {
             raquette.style.left = ((e.clientX - fractionNumber(window.innerWidth, 1, 5)) - largeurRaquette / 2) + "px";
